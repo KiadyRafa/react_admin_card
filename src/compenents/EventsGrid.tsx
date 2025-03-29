@@ -13,7 +13,7 @@ export const EventsGrid = ({ events }: EventsGridProps) => {
             spacing={{ xs: 2, sm: 3, md: 4 }} // Espacement responsive
             sx={{
                 padding: { xs: 2, sm: 3 }, // Marge intérieure
-                justifyContent: 'center' // Centrage des cartes
+                justifyContent: 'center' 
             }}
         >
             {events.map((event) => (

@@ -182,7 +182,7 @@ export const EventCard = ({ event }: EventCardProps) => {
                         }
                     }}
                 >
-                    Détails
+                    Supprimer
                 </Button>
                 <Button 
                     variant="contained" 
@@ -198,7 +198,7 @@ export const EventCard = ({ event }: EventCardProps) => {
                         }
                     }}
                 >
-                    {event.availableTickets > 0 ? 'Acheter' : 'Complet'}
+                    {event.availableTickets > 0 ? 'Editer' : 'Complet'}
                 </Button>
             </CardActions>
         </Card>

@@ -7,12 +7,11 @@ import { TicketsList } from './compenents/TicketsList';
 import { UsersList } from './compenents/UsersList';
 import { VenuesList } from './compenents/VenuesList';
 import { sampleEvents } from './data/events';
-import jsonServerProvider from 'ra-data-json-server';
 import { theme } from './styles/theme';
 import { EventCard } from './compenents/EventCard';
 import { Typography, Box } from '@mui/material';
-
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+import { dataProvider } from './providers';
+import { authProvider } from './providers/authProvider';
 
 const Dashboard = () => (
   <Box sx={{ p: 3 }}>
@@ -75,6 +74,7 @@ const App = () => {
     <Admin 
       theme={theme} 
       dataProvider={dataProvider}
+      authProvider={authProvider}
       dashboard={Dashboard}
       layout={({ children }) => (
         <Box sx={{ display: 'flex' }}>
@@ -97,7 +97,7 @@ const App = () => {
       <Resource 
         name="events" 
         list={EventList}
-        show={EventCard}
+        show={EventCard} // Utilise uniquement votre EventCard existant
       />
       <Resource name="tickets" list={TicketsList} />
       <Resource name="users" list={UsersList} />
